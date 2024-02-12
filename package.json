@@ -1,0 +1,45 @@
+{
+  "name": "@h7/byte-buffer",
+  "description": "Utility class to quickly stream Uint8Array chunks.",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harmony7/js-byte-buffer.git"
+  },
+  "author": {
+    "name": "Katsuyuki Omuro",
+    "email": "harmony7@pex2.jp"
+  },
+  "type": "module",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf build",
+    "coverage": "c8 npm test",
+    "test": "npm run test:unit",
+    "test:unit": "node --test --no-warnings=ExperimentalWarning --loader ts-node/esm test/unit/**/*.test.ts"
+  },
+  "devDependencies": {
+    "@fastly/js-compute": "^3.7.3",
+    "@types/node": "^20.11.17",
+    "c8": "^8.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "files": [
+    "build/**/*.js",
+    "build/**/*.js.map",
+    "build/**/*.d.ts",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "SECURITY.md"
+  ],
+  "keywords": [
+    "arrays",
+    "bytes",
+    "streams"
+  ]
+}
